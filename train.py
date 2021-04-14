@@ -14,6 +14,14 @@ from glob import glob
 import argparse
 import warnings
 
+#let us look at lunar albedo
+fig = plt.figure(figsize=(6, 4))
+ax = fig.add_subplot(111)
+ax.set_title('Map of Lunar Albedo of Moon')
+ax.set_xlabel("Longitude")
+ax.set_ylabel("Latitude")
+plt.imshow(albedodf);
+
 
 class DataGenerator(tf.keras.utils.Sequence):
     def __init__(self, wav_paths, labels, sr, dt, n_classes,
